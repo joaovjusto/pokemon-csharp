@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Firebase.Database;
+using Firebase.Database.Query;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -14,6 +16,8 @@ namespace projetofinal.Controllers
 {
     public class HomeController : Controller
     {
+        static List<Pokemon> Lista { get; set; }
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -23,7 +27,6 @@ namespace projetofinal.Controllers
 
         public async Task<IActionResult> IndexAsync()
         {
-
             string baseUrl = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=40";
 
             using (HttpClient client = new HttpClient())
@@ -38,24 +41,30 @@ namespace projetofinal.Controllers
 
                     data = data.ToString();
 
-                    var pokemon = new ServiceClass();
+                    ServiceClass pokemon = new ServiceClass();
 
                     pokemon = JsonConvert.DeserializeObject<ServiceClass>(data);
 
                     var TEMP = pokemon.results;
 
-                    List<Pokemon> items = new List<Pokemon>();
+                    List<Pokemon> local = new List<Pokemon>();
 
                     foreach (Pokemon poke in TEMP)
                     {
-                        var pokemonn = new Pokemon();
+                        Pokemon pokemonn = new Pokemon();
 
                         pokemonn = await getPerId(poke);
 
-                        items.Add(pokemonn);
+                        local.Add(pokemonn);
                     }
 
-                    return View(items);
+                    //TempData["items"] = local;
+
+                    //ViewBag.items = local;
+
+                    Lista = local;
+
+                    return View(local);
                 }
             }
             return View();
@@ -83,9 +92,21 @@ namespace projetofinal.Controllers
             }
         }
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> addFavorites(String name)
         {
-            return View();
+            Pokemon poke = new Pokemon();
+
+            List<Pokemon> model = Lista as List<Pokemon>;
+
+            poke = model.Find(item => item.name == name);
+
+            var firebaseClient = new FirebaseClient("https://pokesharp-219d8.firebaseio.com/");
+
+            await firebaseClient
+                .Child("favoritos")
+            .PostAsync(poke);
+
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

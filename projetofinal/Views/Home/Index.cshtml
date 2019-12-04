@@ -13,7 +13,10 @@
                         <img src="@pokemon.sprites.front_default" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">@pokemon.name</h5>
-                            <a href="#" class="btn btn-primary">Selecionar Favorito</a>
+
+                            <button type="submit" onclick="location.href='@Url.Action("addFavorites", "Home", new { @pokemon.name })'" class="btn btn-primary">
+                                Selecionar Favorito
+                            </button>
                         </div>
                     </div>
                 </div>
