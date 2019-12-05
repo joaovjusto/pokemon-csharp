@@ -1,0 +1,28 @@
+﻿@model IEnumerable<projetofinal.Models.Pokemon>
+@{
+    ViewData["Title"] = "Time";
+}
+
+<h1>Meu Time</h1>
+
+<div class="text-center">
+    <div class="row">
+        @foreach (Pokemon pokemon in Model)
+        {
+            <div class="col-3">
+                <div class="card">
+                    <img src="@pokemon.sprites.front_default" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@pokemon.name</h5>
+
+                        <button type="submit" onclick="location.href='@Url.Action("removeFavorites", "Favoritos", new { @pokemon.name })'" class="btn btn-primary">
+                            Remover do Time
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+

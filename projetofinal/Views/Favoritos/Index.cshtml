@@ -1,7 +1,43 @@
-﻿
+﻿@model IEnumerable<projetofinal.Models.Pokemon>
 @{
     ViewData["Title"] = "Favoritos";
 }
 
 <h1>Favoritos</h1>
+
+<div class="text-center">
+    <div class="row">
+        @foreach (Pokemon pokemon in Model)
+        {
+            <div class="col-3">
+                <div class="card">
+                    <img src="@pokemon.sprites.front_default" class="card-img-top" alt="...">
+                    <div class="card-body">
+                       
+                        <!--
+                            
+                        <h5 class="card-title">@pokemon.name</h5>
+                        -->
+
+                        <form method="post" asp-area="" asp-controller="Favoritos" asp-action="alterName">
+                            <label for="userName">Altere o nome do Pokémon:</label>
+                            <input type="text" id="userName" name="userName" placeholder="@pokemon.name" value="@pokemon.name" />
+                            <input type="hidden" id="nomeReal" name="nomeReal" value="@pokemon.name"/>
+                            <input type="submit" />
+                        </form>
+
+                        <button type="submit" onclick="location.href='@Url.Action("addTime", "Favoritos", new { @pokemon.name })'" class="btn btn-primary">
+                            Adicionar no Time
+                        </button>
+
+                        <button type="submit" onclick="location.href='@Url.Action("removeFavorites", "Favoritos", new { @pokemon.name })'" class="btn btn-primary">
+                            Remover do Favoritos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
 
