@@ -11,12 +11,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using projetofinal.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace projetofinal.Controllers
 {
     public class HomeController : Controller
     {
         static List<Pokemon> Lista { get; set; }
+        static String usuario { get; set; }
 
         private readonly ILogger<HomeController> _logger;
 
@@ -25,8 +27,10 @@ namespace projetofinal.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> IndexAsync(string username)
         {
+            usuario = username;
+
             string baseUrl = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=40";
 
             using (HttpClient client = new HttpClient())

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "View";
+}
+
+<div class="limiter">
+<div class="container-login100">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+
+        <span class="login100-form-title p-b-33">
+            Account Login
+        </span>
+
+        <form method="post" asp-area="" asp-controller="Login" asp-action="realizarLogin">
+            <label for="userName">Insira o nome de usuário:</label>
+            <input type="text" id="userName" name="userName" placeholder="Usuário" />
+
+            <label  for="userName">Insira a senha:</label>
+            <input  type="password" id="password" name="password" placeholder="Senha" />
+            <input type="submit" />
+        </form>
+
+        <div class="container-login100-form-btn m-t-20">
+            <button class="login100-form-btn">
+                Sign in
+            </button>
+        </div>
+
+        <div class="text-center">
+            <span class="txt1">
+                Create an account?
+            </span>
+
+            <a href="#" class="txt2 hov1">
+                Sign up
+            </a>
+        </div>
+    </div>
+</div>
+	</div>

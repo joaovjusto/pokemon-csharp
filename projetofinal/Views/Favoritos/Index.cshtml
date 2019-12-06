@@ -20,8 +20,8 @@
                         -->
 
                         <form method="post" asp-area="" asp-controller="Favoritos" asp-action="alterName">
-                            <label for="userName">Altere o nome do Pokémon:</label>
-                            <input type="text" id="userName" name="userName" placeholder="@pokemon.name" value="@pokemon.name" />
+                            <label style="color: white;" for="userName">Altere o nome do Pokémon:</label>
+                            <input style="border-top:none; border-right:none; border-left:none;" type="text" id="userName" name="userName" placeholder="@pokemon.name" value="@pokemon.name" />
                             <input type="hidden" id="nomeReal" name="nomeReal" value="@pokemon.name"/>
                             <input type="submit" />
                         </form>
@@ -41,3 +41,50 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
+<style>
+    .card {
+        border-color: #ffffff;
+        margin-bottom: 20px;
+        background-color: #271C2B;
+    }
+
+        .card h5 {
+            color: #ffffff;
+        }
+
+    .card-body button {
+        background-color: #271C2B;
+        border-right: none !important;
+        border-left: none !important;
+        border: 3px solid #ffffff;
+        padding: 0px;
+        border-radius: 0px;
+        margin: 10px;
+    }
+
+        .card-body button:hover {
+            background-color: #271C2B;
+            border-right: none !important;
+            border-left: none !important;
+            border: 3px solid #ffffff;
+            border-radius: 0px;
+        }
+
+    body {
+        background-image: linear-gradient(red,black,white);
+    }
+
+    .btn-primary {
+        border: 3px solid #ffffff;
+    }
+
+    input {
+    margin-top: 7px;
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    }
+    
+    in
+
+</style>

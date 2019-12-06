@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\studio-workspace\\projetofinal\\projetofinal\\projetofinal.csproj": {}
+    "C:\\studio-workspace\\pokemon-csharp\\projetofinal\\projetofinal.csproj": {}
   },
   "projects": {
-    "C:\\studio-workspace\\projetofinal\\projetofinal\\projetofinal.csproj": {
+    "C:\\studio-workspace\\pokemon-csharp\\projetofinal\\projetofinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\studio-workspace\\projetofinal\\projetofinal\\projetofinal.csproj",
+        "projectUniqueName": "C:\\studio-workspace\\pokemon-csharp\\projetofinal\\projetofinal.csproj",
         "projectName": "projetofinal",
-        "projectPath": "C:\\studio-workspace\\projetofinal\\projetofinal\\projetofinal.csproj",
+        "projectPath": "C:\\studio-workspace\\pokemon-csharp\\projetofinal\\projetofinal.csproj",
         "packagesPath": "C:\\Users\\João Justo\\.nuget\\packages\\",
-        "outputPath": "C:\\studio-workspace\\projetofinal\\projetofinal\\obj\\",
+        "outputPath": "C:\\studio-workspace\\pokemon-csharp\\projetofinal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\João Justo\\AppData\\Roaming\\NuGet\\NuGet.Config",
