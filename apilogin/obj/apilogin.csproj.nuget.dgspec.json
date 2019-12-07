@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\studio-workspace\\pokemon-csharp\\apilogin\\apilogin.csproj": {}
+    "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\apilogin\\apilogin.csproj": {}
   },
   "projects": {
-    "C:\\studio-workspace\\pokemon-csharp\\apilogin\\apilogin.csproj": {
+    "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\apilogin\\apilogin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\studio-workspace\\pokemon-csharp\\apilogin\\apilogin.csproj",
+        "projectUniqueName": "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\apilogin\\apilogin.csproj",
         "projectName": "apilogin",
-        "projectPath": "C:\\studio-workspace\\pokemon-csharp\\apilogin\\apilogin.csproj",
+        "projectPath": "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\apilogin\\apilogin.csproj",
         "packagesPath": "C:\\Users\\João Justo\\.nuget\\packages\\",
-        "outputPath": "C:\\studio-workspace\\pokemon-csharp\\apilogin\\obj\\",
+        "outputPath": "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\apilogin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\João Justo\\AppData\\Roaming\\NuGet\\NuGet.Config",

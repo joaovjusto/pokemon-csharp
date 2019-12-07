@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Firebase.Database;
+using Firebase.Database.Query;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using projetofinal.Models;
@@ -41,9 +43,23 @@ namespace projetofinal.Controllers
 
                     foreach(User u in usuarios)
                     {
-                        if(u.nome == userName || u.senha == password)
+                        if(u.usuario == userName && u.senha == password)
                         {
-                            return RedirectToAction("Index", "Home", new { username = u.nome });
+                            var firebaseClient = new FirebaseClient("https://pokesharp-219d8.firebaseio.com/");
+
+                            await firebaseClient
+                            .Child("usuarioLogado")
+                            .DeleteAsync();
+
+                            UsuarioLogado user = new UsuarioLogado();
+
+                            user.name = userName;
+
+                                await firebaseClient
+                                    .Child("usuarioLogado")
+                                    .PostAsync(user);
+
+                            return RedirectToAction("Index", "Home", new { username = u.usuario });
                         }
                     };  
 

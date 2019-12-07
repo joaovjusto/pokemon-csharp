@@ -12,10 +12,18 @@ namespace projetofinal.Controllers
     public class FavoritosController : Controller
     {
         static List<Pokemon> Lista { get; set; }
+        static String usuario { get; set; }
 
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> IndexAsync(string username)
         {
             var firebaseClient = new FirebaseClient("https://pokesharp-219d8.firebaseio.com/");
+
+            var usuarioLogado = await firebaseClient.Child("usuarioLogado").OrderByKey().OnceAsync<UsuarioLogado>();
+
+            foreach (var user in usuarioLogado)
+            {
+                usuario = user.Object.name;
+            }
 
             var favoritos = await firebaseClient.Child("favoritos").OrderByKey().OnceAsync<Pokemon>();
 
@@ -23,15 +31,18 @@ namespace projetofinal.Controllers
 
             foreach (var poke in favoritos)
             {
-                local.Add(new Pokemon()
+                if (poke.Object.user == usuario)
                 {
-                    name = poke.Object.name,
-                    url = poke.Object.url,
-                    sprites = poke.Object.sprites,
-                    user = poke.Object.user,
-                    time = poke.Object.time,
-                    habilidade = poke.Object.habilidade
-                });
+                    local.Add(new Pokemon()
+                    {
+                        name = poke.Object.name,
+                        url = poke.Object.url,
+                        sprites = poke.Object.sprites,
+                        user = poke.Object.user,
+                        time = poke.Object.time,
+                        habilidade = poke.Object.habilidade
+                    });
+                }
             }
 
             Lista = local;
@@ -99,7 +110,7 @@ namespace projetofinal.Controllers
                 }
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Time");
         }
 
         public async Task<IActionResult> removeFavorites(String name)

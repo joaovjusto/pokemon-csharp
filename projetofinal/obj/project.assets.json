@@ -8289,11 +8289,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\studio-workspace\\pokemon-csharp\\projetofinal\\projetofinal.csproj",
+      "projectUniqueName": "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\projetofinal\\projetofinal.csproj",
       "projectName": "projetofinal",
-      "projectPath": "C:\\studio-workspace\\pokemon-csharp\\projetofinal\\projetofinal.csproj",
+      "projectPath": "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\projetofinal\\projetofinal.csproj",
       "packagesPath": "C:\\Users\\João Justo\\.nuget\\packages\\",
-      "outputPath": "C:\\studio-workspace\\pokemon-csharp\\projetofinal\\obj\\",
+      "outputPath": "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\projetofinal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\João Justo\\AppData\\Roaming\\NuGet\\NuGet.Config",

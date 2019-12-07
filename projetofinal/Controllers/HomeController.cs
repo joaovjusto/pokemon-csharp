@@ -31,6 +31,8 @@ namespace projetofinal.Controllers
         {
             usuario = username;
 
+            TempData["username"] = usuario;
+
             string baseUrl = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=40";
 
             using (HttpClient client = new HttpClient())
@@ -106,14 +108,25 @@ namespace projetofinal.Controllers
 
             var firebaseClient = new FirebaseClient("https://pokesharp-219d8.firebaseio.com/");
 
+            var usuarioLogado = await firebaseClient.Child("usuarioLogado").OrderByKey().OnceAsync<UsuarioLogado>();
+
+            foreach (var user in usuarioLogado)
+            {
+                usuario = user.Object.name;
+            }
+
+            poke.user = usuario;
+
             await firebaseClient
                 .Child("favoritos")
             .PostAsync(poke);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home", new { username = poke.user });
         }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult SendToFavorites()
+        {
+            return RedirectToAction("Index", "Favoritos", new { username = usuario });
+        }
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
