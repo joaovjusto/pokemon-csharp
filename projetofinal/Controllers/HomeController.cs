@@ -115,7 +115,10 @@ namespace projetofinal.Controllers
                 usuario = user.Object.name;
             }
 
+            Random rnd = new Random();
+
             poke.user = usuario;
+            poke.habilidade = rnd.Next(1, 13);
 
             await firebaseClient
                 .Child("favoritos")

@@ -95,20 +95,37 @@ namespace projetofinal.Controllers
 
             var favoritos = await firebaseClient.Child("favoritos").OrderByKey().OnceAsync<Pokemon>();
 
+            Pokemon modelo = new Pokemon();
+
+            String key = "";
+
+            Int32 contadorPokes = 0;
+
             foreach (var pokemon in favoritos)
             {
-                if (poke.name == pokemon.Object.name)
+                if(pokemon.Object.time && pokemon.Object.user == usuario)
                 {
-                    await firebaseClient
-                      .Child("favoritos")
-                      .Child(pokemon.Key)
-                      .DeleteAsync();
-
-                    await firebaseClient
-                     .Child("favoritos")
-                        .PostAsync(poke);
+                    contadorPokes += 1;
+                    return RedirectToAction("Index");
+                }
+                if (poke.name == pokemon.Object.name )
+                {
+                    key = pokemon.Key;
+                    modelo = poke;
+                    break;
                 }
             }
+
+            modelo.time = true;
+
+            await firebaseClient
+                      .Child("favoritos")
+                      .Child(key)
+                      .DeleteAsync();
+
+            await firebaseClient
+             .Child("favoritos")
+                .PostAsync(modelo);
 
             return RedirectToAction("Index", "Time");
         }

@@ -69,10 +69,16 @@ namespace projetofinal.Controllers
             {
                 if (poke.name == pokemon.Object.name)
                 {
+                    pokemon.Object.time = false;
+
                     await firebaseClient
                       .Child("favoritos")
                       .Child(pokemon.Key)
                       .DeleteAsync();
+
+                    await firebaseClient
+                     .Child("favoritos")
+                     .PostAsync(pokemon);
                 }
             }
 

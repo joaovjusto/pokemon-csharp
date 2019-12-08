@@ -432,3 +432,5 @@ C:\Users\João Justo\Desktop\pokemon-csharp-master\projetofinal\obj\Debug\netcor
 C:\Users\João Justo\Desktop\pokemon-csharp-master\projetofinal\obj\Debug\netcoreapp3.0\projetofinal.pdb
 C:\Users\João Justo\Desktop\pokemon-csharp-master\projetofinal\obj\Debug\netcoreapp3.0\Razor\Views\Login\Index.cshtml.g.cs
 C:\Users\João Justo\Desktop\pokemon-csharp-master\projetofinal\obj\Debug\netcoreapp3.0\Razor\Views\CadastroUsuario\Index.cshtml.g.cs
+C:\Users\João Justo\Desktop\pokemon-csharp-master\projetofinal\obj\Debug\netcoreapp3.0\Razor\Views\Batalha\Index.cshtml.g.cs
+C:\Users\João Justo\Desktop\pokemon-csharp-master\projetofinal\obj\Debug\netcoreapp3.0\Razor\Views\Battle\Index.cshtml.g.cs

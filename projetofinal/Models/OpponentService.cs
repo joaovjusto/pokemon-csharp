@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace projetofinal
 {
-    public class UserService
+    public class OpponentService
     {
-        public List<User> usuarios { get; set; }
+        public List<Opponent> opponents { get; set; }
     }
 }

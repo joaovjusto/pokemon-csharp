@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>Batalha Pokemon</h1>
+<span>Selecione um oponente</span>
+
+<div class="col-3">
+    <div class="card">
+        <img src="https://d.newsweek.com/en/full/1514725/pokemon-masters-release-date-pikachu.jpg?w=1600&h=1600&q=88&f=5f18693cba9345a90927f205fbfb224a" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Oponente 1</h5>
+
+            <button type="submit" onclick="location.href='@Url.Action("Index", "Battle")'" class="btn btn-primary">
+                Selecionar
+            </button>
+        </div>
+    </div>
+</div>
+

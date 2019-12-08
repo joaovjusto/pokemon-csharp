@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DAO\**" />
+    <Content Remove="DAO\**" />
+    <EmbeddedResource Remove="DAO\**" />
+    <None Remove="DAO\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FirebaseDatabase.net" Version="4.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
@@ -14,11 +21,6 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DAO\" />
-    <Folder Include="Views\Batalha\" />
   </ItemGroup>
 
 </Project>

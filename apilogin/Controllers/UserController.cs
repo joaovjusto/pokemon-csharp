@@ -7,7 +7,7 @@ using Firebase.Database.Query;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace apilogin.Controllers
+namespace projetofinal.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -63,7 +63,6 @@ namespace apilogin.Controllers
 
         public async Task<bool> BuscarUsuarioPorNome(User u)
         {
-            Console.WriteLine("Cheguei no busca usuario");
 
             var firebaseClient = new FirebaseClient("https://pokesharp-219d8.firebaseio.com/");
 
