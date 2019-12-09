@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\projetofinal\\projetofinal.csproj": {}
+    "C:\\Users\\João Justo\\Desktop\\projeto-final\\projetofinal\\projetofinal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\projetofinal\\projetofinal.csproj": {
+    "C:\\Users\\João Justo\\Desktop\\projeto-final\\projetofinal\\projetofinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\projetofinal\\projetofinal.csproj",
+        "projectUniqueName": "C:\\Users\\João Justo\\Desktop\\projeto-final\\projetofinal\\projetofinal.csproj",
         "projectName": "projetofinal",
-        "projectPath": "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\projetofinal\\projetofinal.csproj",
+        "projectPath": "C:\\Users\\João Justo\\Desktop\\projeto-final\\projetofinal\\projetofinal.csproj",
         "packagesPath": "C:\\Users\\João Justo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\João Justo\\Desktop\\pokemon-csharp-master\\projetofinal\\obj\\",
+        "outputPath": "C:\\Users\\João Justo\\Desktop\\projeto-final\\projetofinal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\João Justo\\AppData\\Roaming\\NuGet\\NuGet.Config",

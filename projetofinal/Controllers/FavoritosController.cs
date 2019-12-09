@@ -106,26 +106,28 @@ namespace projetofinal.Controllers
                 if(pokemon.Object.time && pokemon.Object.user == usuario)
                 {
                     contadorPokes += 1;
-                    return RedirectToAction("Index");
+                    //return RedirectToAction("Index");
                 }
                 if (poke.name == pokemon.Object.name )
                 {
                     key = pokemon.Key;
                     modelo = poke;
-                    break;
                 }
             }
 
             modelo.time = true;
 
-            await firebaseClient
+            if(contadorPokes < 3)
+            {
+                await firebaseClient
                       .Child("favoritos")
                       .Child(key)
                       .DeleteAsync();
 
-            await firebaseClient
-             .Child("favoritos")
-                .PostAsync(modelo);
+                await firebaseClient
+                 .Child("favoritos")
+                    .PostAsync(modelo);
+            }
 
             return RedirectToAction("Index", "Time");
         }

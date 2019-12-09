@@ -124,7 +124,7 @@ namespace projetofinal.Controllers
                 .Child("favoritos")
             .PostAsync(poke);
 
-            return RedirectToAction("Index", "Home", new { username = poke.user });
+            return RedirectToAction("Index", "Favoritos");
         }
         public IActionResult SendToFavorites()
         {

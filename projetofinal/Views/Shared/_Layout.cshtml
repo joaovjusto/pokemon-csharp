@@ -11,16 +11,14 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pokemon Battles</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <img class="pokebola" src="~/images/pokeball.svg" />
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark home" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark favoritos" asp-area="" asp-controller="Home" asp-action="SendToFavorites">Favoritos</a>
                         </li>
@@ -43,7 +41,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - Pokemon Battles - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            João Justo e Marcos Domingues &copy; 2019 - Pokemon Battles - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -53,13 +51,50 @@
 </body>
 </html>
 <style>
+    .pokebola {
+        height: 25px;
+        width: 25px;
+    }
+
+    .home {
+        border: 1px solid transparent;
+    }
+
+    .favoritos {
+        border: 1px solid transparent;
+    }
+
+    .time {
+        border: 1px solid transparent;
+    }
+
     .home:hover {
         border-bottom: 2px solid black;
     }
+
     .time:hover {
         border-bottom: 2px solid black;
     }
+
     .favoritos:hover {
         border-bottom: 2px solid black;
     }
+
+    .batalha:hover {
+        border-bottom: 2px solid black;
+    }
+
+    .batalha {
+        border: 1px solid transparent;
+    }
+    footer {
+        background-color: #ffffff;
+    }
+    .limiter {
+        background-color: white;
+        border: 2px solid #000000;
+        border-radius: 10px;
+        padding: 20px;
+        }
+
 </style>

@@ -23,7 +23,7 @@
                             <label style="color: white;" for="userName">Altere o nome do Pokémon:</label>
                             <input style="border-top:none; border-right:none; border-left:none;" type="text" id="userName" name="userName" placeholder="@pokemon.name" value="@pokemon.name" />
                             <input type="hidden" id="nomeReal" name="nomeReal" value="@pokemon.name"/>
-                            <input type="submit" />
+                            <input type="submit" value="alterar nome" class="alt-nome" />
                         </form>
 
                         <button type="submit" onclick="location.href='@Url.Action("addTime", "Favoritos", new { @pokemon.name })'" class="btn btn-primary">
@@ -84,7 +84,10 @@
     border-color: white;
     color: white;
     }
+
+    .alt-nome {
     
-    in
+    border-radius: 50px;
+    }
 
 </style>
